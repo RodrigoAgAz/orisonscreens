@@ -148,11 +148,11 @@ p{margin:0;text-wrap:pretty}
 }
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:66px}
 .wordmark{display:inline-flex;align-items:center;gap:.62em;text-decoration:none;color:var(--ink)}
-.wordmark .mark{width:34px;height:34px;flex:none;display:block}
+.wordmark .mark{width:43px;height:43px;flex:none;display:block}
 .wordmark .lockup{display:flex;flex-direction:column;line-height:1;gap:.28em}
-.wordmark .name{font-family:var(--display);font-size:1.1rem;letter-spacing:.13em}
-.wordmark small{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--ink-3)}
-footer .wordmark .mark{width:40px;height:40px}
+.wordmark .name{font-family:var(--display);font-size:1.18rem;letter-spacing:.13em}
+.wordmark small{font-family:var(--mono);font-size:.63rem;letter-spacing:.2em;color:var(--ink-3)}
+footer .wordmark .mark{width:50px;height:50px}
 .nav ul{display:none;list-style:none;margin:0;padding:0;gap:30px}
 .nav ul a{position:relative;text-decoration:none;font-size:.94rem;font-weight:500;color:var(--ink-2);padding-block:4px}
 .nav ul a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1.5px;background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .3s var(--ease)}
@@ -168,17 +168,14 @@ footer .wordmark .mark{width:40px;height:40px}
 .hero{padding-block:clamp(28px,3.6vw,54px) clamp(28px,3.6vw,52px)}
 .hero-grid{display:grid;gap:38px}
 .hero-copy{display:grid;gap:24px;align-content:center}
-.hero h1 .l{display:block;overflow:hidden}
+.hero h1 .l{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
 .hero h1 .l>span{display:block;animation:lineIn .95s var(--ease) both}
 .hero h1 .l:nth-child(2)>span{animation-delay:.09s}
 .hero h1 .l:nth-child(3)>span{animation-delay:.18s}
 @keyframes lineIn{from{transform:translateY(102%)}to{transform:none}}
 @media (prefers-reduced-motion:reduce){ .hero h1 .l>span{animation:none} }
 .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
-.status{display:inline-flex;align-items:center;gap:.65em}
-.status i{width:8px;height:8px;border-radius:50%;background:var(--amber);flex:none;box-shadow:0 0 0 0 color-mix(in srgb,var(--amber) 60%,transparent);animation:ping 2.6s var(--ease) infinite}
-@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--amber) 55%,transparent)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
-@media (prefers-reduced-motion:reduce){ .status i{animation:none} }
+.status b{font-weight:400;color:var(--amber-ink)}
 .hero figure{margin:0;position:relative}
 .hero figure img{width:100%;max-height:min(70vh,560px);object-fit:cover;border-radius:4px;background:var(--paper-2);box-shadow:0 1px 0 var(--line-2),0 30px 60px -34px rgba(19,20,24,.45)}
 @media (min-width:960px){
@@ -432,7 +429,7 @@ footer nav a:hover{text-decoration:underline}
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow status"><i></i> Pre-launch · London · Cabs on the road end of Q4 2026</p>
+        <p class="eyebrow status"><b>Pre-launch</b> · London · Cabs on the road end of Q4 2026</p>
         <h1>
           <span class="l"><span>Advertising</span></span>
           <span class="l"><span>inside London's</span></span>
