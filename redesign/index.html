@@ -181,7 +181,6 @@ footer .wordmark .mark{width:40px;height:40px}
 @media (prefers-reduced-motion:reduce){ .status i{animation:none} }
 .hero figure{margin:0;position:relative}
 .hero figure img{width:100%;max-height:min(70vh,560px);object-fit:cover;border-radius:4px;background:var(--paper-2);box-shadow:0 1px 0 var(--line-2),0 30px 60px -34px rgba(19,20,24,.45)}
-.hero figcaption{font-family:var(--mono);font-size:.71rem;color:var(--ink-3);margin-top:11px;letter-spacing:.03em}
 @media (min-width:960px){
   .hero-grid{grid-template-columns:1.3fr 1fr;gap:56px;align-items:center}
 }
@@ -327,7 +326,6 @@ section{padding-block:calc(var(--rhythm) / 2)}
 @keyframes logIn{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){ .j-log li{animation:none} }
 .j-empty{padding:16px 15px;color:#5D636B;font-family:var(--mono);font-size:.73rem}
-.j-note{font-family:var(--mono);font-size:.7rem;color:#5D636B;letter-spacing:.03em;line-height:1.6}
 
 /* ============================================================
    THE SCREEN — pinned product
@@ -335,7 +333,6 @@ section{padding-block:calc(var(--rhythm) / 2)}
 .band{margin-block:0}
 .band figure{margin:0}
 .band img{width:100%;aspect-ratio:2/1;object-fit:cover;display:block;background:var(--paper-2)}
-.band figcaption{font-family:var(--mono);font-size:.71rem;color:var(--ink-3);margin-top:11px}
 @media (max-width:700px){ .band img{aspect-ratio:4/3} }
 
 .pin-grid{display:grid;gap:36px}
@@ -345,7 +342,6 @@ section{padding-block:calc(var(--rhythm) / 2)}
 }
 .pin-media figure{margin:0}
 .pin-media img{width:100%;border-radius:4px;background:var(--paper-2)}
-.pin-media figcaption{font-family:var(--mono);font-size:.71rem;color:var(--ink-3);margin-top:11px}
 .spec-wrap{overflow-x:auto}
 table.spec{width:100%;border-collapse:collapse;font-size:.95rem}
 table.spec th,table.spec td{text-align:left;padding:15px 0;border-bottom:1px solid var(--line);vertical-align:top}
@@ -365,7 +361,6 @@ ul.checks li{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:st
 ul.checks li::before{content:'';width:10px;height:10px;margin-top:8px;border-radius:50%;background:var(--amber)}
 .drivers figure{margin:0}
 .drivers img{width:100%;aspect-ratio:5/6;object-fit:cover;border-radius:4px;max-height:600px}
-.drivers figcaption{font-family:var(--mono);font-size:.71rem;color:var(--night-muted);margin-top:11px}
 
 /* ============================================================
    ABOUT + CONTACT
@@ -453,7 +448,6 @@ footer nav a:hover{text-decoration:underline}
       <figure>
         <img src="/assets/img/hero-passenger-view.jpg" width="1080" height="1329" fetchpriority="high"
              alt="The view from the rear bench of a black cab: an Orison screen set into the back of the tip-up seat, switched on.">
-        <figcaption>Fitted unit, rear bench view. LEVC TX.</figcaption>
       </figure>
     </div>
   </section>
@@ -475,7 +469,7 @@ footer nav a:hover{text-decoration:underline}
     <div class="wrap">
       <div class="j-head">
         <div class="sec-head rise" style="margin-bottom:0">
-          <p class="eyebrow">How it works</p>
+          <p class="eyebrow">How it works · worked example</p>
           <h2>One fare across five postcodes. The screen keeps up.</h2>
           <p class="lede">The screen knows where the cab is. As the journey crosses from Mayfair into Soho, into the City, the creative changes with it, and every play is written to a log with a time and a position.</p>
         </div>
@@ -532,7 +526,6 @@ footer nav a:hover{text-decoration:underline}
           </div>
         </div>
 
-        <p class="j-note" style="margin-top:18px">Worked example, not live data. Categories stand in for real campaigns. The log is what an advertiser receives: time, zone, position, duration.</p>
       </div>
     </div>
   </section>
@@ -575,7 +568,6 @@ footer nav a:hover{text-decoration:underline}
           <figure>
             <img src="/assets/img/screen-unit.jpg" width="1000" height="1219" loading="lazy"
                  alt="The Orison unit photographed against a white background, the display set into the back of a black cab tip-up seat.">
-            <figcaption>The unit, out of the vehicle. Screen shown idle.</figcaption>
           </figure>
         </div>
         <div>
@@ -607,7 +599,6 @@ footer nav a:hover{text-decoration:underline}
     <figure>
       <img src="/assets/img/install-band.jpg" width="1800" height="901" loading="lazy"
            alt="Two Orison fitters working at the open seat-back aperture inside a black cab, mid-installation.">
-      <div class="wrap"><figcaption>Fitting a unit into the seat back. Our own installers, no permanent modification to the vehicle.</figcaption></div>
     </figure>
   </div>
 
@@ -692,12 +683,17 @@ footer nav a:hover{text-decoration:underline}
             <p class="lede">Media pack, pilot campaigns, fleet partnerships or investment. One form, answered by a person.</p>
           </div>
           <div class="direct">
-            <div><div class="k">Email</div><a href="mailto:jack@orisonscreens.com">jack@orisonscreens.com</a></div>
+            <div><div class="k">Email</div><a href="mailto:info@orisonscreens.com">info@orisonscreens.com</a></div>
             <div><div class="k">LinkedIn</div><a href="https://www.linkedin.com/company/orison-screens/" rel="noopener">linkedin.com/company/orison-screens</a></div>
             <div><div class="k">Based</div>London</div>
           </div>
         </div>
-        <form action="https://formspree.io/f/PLACEHOLDER" method="POST">
+        <form action="https://formsubmit.co/jack@orisonscreens.com" method="POST">
+          <input type="hidden" name="_subject" value="New enquiry from orisonscreens.com">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://orisonscreens.com/thanks.html">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
           <label>Name <input type="text" name="name" required autocomplete="name"></label>
           <label>Email <input type="email" name="email" required autocomplete="email"></label>
           <label>I am
