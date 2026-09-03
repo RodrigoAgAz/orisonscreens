@@ -207,7 +207,9 @@ footer .wordmark .mark{width:40px;height:40px}
 /* ============================================================
    SECTIONS
    ============================================================ */
-section{padding-block:var(--rhythm)}
+section{padding-block:calc(var(--rhythm) / 2)}
+/* a full-bleed dark block carries its own internal space; the colour change does the separating */
+.journey{padding-block:var(--rhythm)}
 .sec-head{display:grid;gap:15px;margin-bottom:clamp(30px,4vw,52px);max-width:40em}
 
 /* definition rows */
@@ -330,7 +332,7 @@ section{padding-block:var(--rhythm)}
 /* ============================================================
    THE SCREEN — pinned product
    ============================================================ */
-.band{margin-block:clamp(8px,2vw,24px)}
+.band{margin-block:0}
 .band figure{margin:0}
 .band img{width:100%;aspect-ratio:2/1;object-fit:cover;display:block;background:var(--paper-2)}
 .band figcaption{font-family:var(--mono);font-size:.71rem;color:var(--ink-3);margin-top:11px}
@@ -370,11 +372,14 @@ ul.checks li::before{content:'';width:10px;height:10px;margin-top:8px;border-rad
    ============================================================ */
 .about-grid,.contact-grid{display:grid;gap:38px}
 @media (min-width:960px){
-  .about-grid{grid-template-columns:5fr 7fr;gap:60px;align-items:start}
+  .about-grid{grid-template-columns:4fr 8fr;gap:64px;align-items:center}
   .contact-grid{grid-template-columns:5fr 7fr;gap:60px;align-items:start}
 }
-.person{display:grid;grid-template-columns:112px 1fr;gap:22px;align-items:center;padding:22px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
-.person img{width:112px;height:112px;object-fit:cover;object-position:50% 28%;border-radius:3px;background:var(--paper-2)}
+.portrait{margin:0;display:grid;gap:16px}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px;background:var(--paper-2)}
+.portrait figcaption{display:grid;gap:3px;padding-top:14px;border-top:1px solid var(--ink)}
+.portrait .nm{font-weight:600;font-size:1.05rem}
+.portrait .rl{font-family:var(--mono);font-size:.73rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
 form{display:grid;gap:17px}
 label{display:grid;gap:7px;font-size:.87rem;font-weight:600}
 input,select,textarea{
@@ -543,7 +548,7 @@ footer nav a:hover{text-decoration:underline}
       <div class="defs">
         <div class="def rise">
           <h3>Formats</h3>
-          <p>Full-screen video at 15 and 30 seconds, static, and journey takeovers. Silent, so the creative has to carry itself without a voiceover.</p>
+          <p>A twelve-second full-screen slot. Video or static, and journey takeovers. Silent, so the creative has to carry itself without a voiceover.</p>
         </div>
         <div class="def rise">
           <h3>Targeting</h3>
@@ -583,6 +588,7 @@ footer nav a:hover{text-decoration:underline}
             <table class="spec">
               <tr><th>Display</th><td>13.3-inch, 1920 &times; 1080, 16:9</td></tr>
               <tr><th>Mounting</th><td>Integrated into the tip-up seat back, angled to the rear bench</td></tr>
+              <tr><th>Slot</th><td>12 seconds, full screen</td></tr>
               <tr><th>Playback</th><td>Full-motion video, silent. No audio hardware</td></tr>
               <tr><th>Location</th><td>GPS, logged per play</td></tr>
               <tr><th>Runs when</th><td>Between meter on and meter off</td></tr>
@@ -658,19 +664,18 @@ footer nav a:hover{text-decoration:underline}
   <!-- ===================== ABOUT ===================== -->
   <section id="about">
     <div class="wrap about-grid">
-      <div class="sec-head rise" style="margin-bottom:0">
+      <figure class="portrait rise">
+        <img src="/assets/img/founder.jpg" width="880" height="1100" loading="lazy"
+             alt="Jack Barwick at the wheel of a black cab.">
+        <figcaption>
+          <span class="nm">Jack Barwick</span>
+          <span class="rl">Founder</span>
+        </figcaption>
+      </figure>
+      <div style="display:grid;gap:24px;align-content:start">
         <p class="eyebrow">About Orison</p>
         <h2>Small, London, and honest about where we are.</h2>
-      </div>
-      <div style="display:grid;gap:26px">
         <p class="measure">Orison Screens is a pre-launch company building a passenger-facing screen network for London's black cabs. The first cabs go on the road at the end of Q4 2026, and we are selling the first campaigns to run on them now. We publish what we can measure and nothing we cannot.</p>
-        <div class="person">
-          <img src="/assets/img/founder.jpg" width="720" height="720" loading="lazy" alt="Portrait of the founder of Orison Screens.">
-          <div>
-            <strong>Jack Barwick</strong><br>
-            <span style="color:var(--ink-2)">Founder</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -825,7 +830,7 @@ footer nav a:hover{text-decoration:underline}
     const li = document.createElement('li');
     li.innerHTML = `<span>${hhmm(START + z.mins)}</span>` +
                    `<span><b>${z.cat}</b> · ${z.name} ${z.pc}</span>` +
-                   `<em>PLAY 0:15</em>`;
+                   `<em>PLAY 0:12</em>`;
     logEl.appendChild(li);
     while (logEl.children.length > 5) logEl.removeChild(logEl.firstChild);
   }
