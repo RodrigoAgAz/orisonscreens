@@ -1,39 +1,58 @@
 # Photos
 
-Upload full-resolution originals into this folder, using the filenames below.
-Do not resize or compress before uploading — the build step produces the web
-versions. JPEG or PNG. Long edge 2000px or more for anything used large.
+Originals as supplied live in this folder. Web-sized versions used by the site
+are generated into `assets/img/` — edit those only by regenerating from here.
 
-On github.com: switch to branch `claude/website-redesign-planning-xvm4k3`,
-open `assets/photos/`, then **Add file → Upload files**.
+## What went where
 
-| Filename | Shot | Used on |
+| Web file | From | Used on |
 |---|---|---|
-| `01-passenger-view.jpg` | From the rear bench, eye level, screen on the partition playing a real creative. Daylight, no people in frame. | Homepage hero |
-| `02-screen-unit.jpg` | The unit straight on or three-quarter, screen on, floor and cables clear of the frame. | "The screen" section, media pack |
-| `03-cab-exterior.jpg` | Black cab exterior, three-quarter front, dusk, TAXI light lit, recognisable London street. | Audience section, link preview image |
-| `04-installation.jpg` | Fitter working on the unit, or a driver with the screen visible behind. | Drivers section |
-| `05-founder.jpg` | Founder headshot. | About section |
+| `hero-passenger-view.jpg` | in-cab, unit fitted, screen showing the Orison holding screen | Homepage hero |
+| `screen-unit.jpg` | studio shot of the unit, straight on | "The screen" section |
+| `installation.jpg` | fitter on his back installing the unit | Drivers section |
+| `founder.jpg` | black and white portrait at the wheel | About section |
+| `installation-wide.jpg` | two people at the open aperture in the cab | held in reserve |
+| `og-card.jpg` | same frame as the hero, cropped wide | link previews |
 
-Optional extras, same folder, any filename starting `xx-`:
-night interior with the screen as the light source; a second installation frame;
-detail of the mount.
+## Retouching disclosure
 
-## Status of the five sent on 3 September
+`screen-unit.jpg` has the screen content replaced. The studio shots were all
+photographed with Canva template creatives on screen, which carry visible
+placeholder branding — `www.reallygreatsite.com`, "Larana, Inc.", "Borcelle
+Restaurant", "123 Anywhere St". Any of those on a live site reads as a fake
+campaign to anyone who looks closely.
 
-- **Unit with Orison logo on screen** → rename to `02-screen-unit.jpg`. Reshoot
-  preferred: tidy the loose cable and screw at bottom left, and show a real ad
-  creative rather than the logo.
-- **Two installer frames** → best one becomes `04-installation.jpg`.
-- **Screen showing "Your financial freedom starts here"** → do not publish. That
-  creative is a Canva template and carries the placeholder URL
-  `www.reallygreatsite.com` on the screen. Reshoot with a real creative.
-- **Black and white portrait at the wheel** → `05-founder.jpg`, if that is the
-  founder. It is the only monochrome image on the site, which reads as
-  deliberate only in the About section.
-- **Still needed:** `01-passenger-view.jpg` and `03-cab-exterior.jpg`.
+The replacement is the unit's own idle screen: the Orison mark and wordmark on
+black, matching exactly what the fitted unit shows in `hero-passenger-view.jpg`.
+Compositing screen content onto product photography is standard practice, and
+what is shown is a real state of the real device. Nothing else in any image has
+been altered.
+
+## Not usable as supplied
+
+Twelve of the nineteen uploads are studio shots of the unit on white. They are
+the best-quality images in the set, but every one carries a Canva placeholder
+creative. Only one has been composited so far. To use the others, either
+reshoot with a real creative on screen, or ask for the same compositing.
+
+The frame showing "YOUR FINANCIAL FREEDOM STARTS HERE" inside the cab is not
+used at all: the placeholder URL is legible at the size the site would display it.
+
+## Still needed
+
+- **Cab exterior.** Nothing in the set shows the outside of a black cab. Needed
+  for the audience section and as a second link-preview image. Three-quarter
+  front, dusk, TAXI light lit, on a recognisable London street.
+- **Passenger point of view with a real ad playing.** The hero currently shows
+  the idle screen. A frame with an actual campaign on it would be stronger.
 
 ## To confirm
 
-Actual diagonal of the panel, not the housing. The display in these frames looks
-closer to 10–11 inches than 13.3. The site must state the measured size.
+- **Screen diagonal.** The site no longer claims 13.3 inches. Measured off these
+  photos the panel is nearer 12, so the real figure needs measuring across the
+  active area, not the housing, before it goes back on the page.
+- **The vehicle in the founder portrait** does not look like a modern LEVC TX.
+  It is fine as a portrait, but the image must not be captioned as a black cab
+  unless it is one.
+- **Whether the person in the portrait is Jack.** Placed on that assumption.
+- Permission from the fitter and the driver to use their likeness.
