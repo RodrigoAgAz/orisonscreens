@@ -61,7 +61,7 @@ body::before{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E");
 }
 main,header,footer{position:relative;z-index:1}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 :where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{
   outline:2.5px solid var(--amber);outline-offset:3px;border-radius:2px;
@@ -147,8 +147,12 @@ p{margin:0;text-wrap:pretty}
   border-bottom:1px solid var(--line);
 }
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:66px}
-.wordmark{display:inline-flex;align-items:baseline;gap:.5em;text-decoration:none;font-family:var(--display);font-size:1.16rem;letter-spacing:.09em}
-.wordmark small{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;color:var(--ink-3)}
+.wordmark{display:inline-flex;align-items:center;gap:.62em;text-decoration:none;color:var(--ink)}
+.wordmark .mark{width:34px;height:34px;flex:none;display:block}
+.wordmark .lockup{display:flex;flex-direction:column;line-height:1;gap:.28em}
+.wordmark .name{font-family:var(--display);font-size:1.1rem;letter-spacing:.13em}
+.wordmark small{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--ink-3)}
+footer .wordmark .mark{width:40px;height:40px}
 .nav ul{display:none;list-style:none;margin:0;padding:0;gap:30px}
 .nav ul a{position:relative;text-decoration:none;font-size:.94rem;font-weight:500;color:var(--ink-2);padding-block:4px}
 .nav ul a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1.5px;background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .3s var(--ease)}
@@ -326,6 +330,12 @@ section{padding-block:var(--rhythm)}
 /* ============================================================
    THE SCREEN — pinned product
    ============================================================ */
+.band{margin-block:clamp(8px,2vw,24px)}
+.band figure{margin:0}
+.band img{width:100%;aspect-ratio:2/1;object-fit:cover;display:block;background:var(--paper-2)}
+.band figcaption{font-family:var(--mono);font-size:.71rem;color:var(--ink-3);margin-top:11px}
+@media (max-width:700px){ .band img{aspect-ratio:4/3} }
+
 .pin-grid{display:grid;gap:36px}
 @media (min-width:1000px){
   .pin-grid{grid-template-columns:.66fr 1fr;gap:56px;align-items:start}
@@ -364,7 +374,7 @@ ul.checks li::before{content:'';width:10px;height:10px;margin-top:8px;border-rad
   .contact-grid{grid-template-columns:5fr 7fr;gap:60px;align-items:start}
 }
 .person{display:grid;grid-template-columns:112px 1fr;gap:22px;align-items:center;padding:22px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
-.person img{width:112px;aspect-ratio:1;object-fit:cover;border-radius:3px;background:var(--paper-2)}
+.person img{width:112px;height:112px;object-fit:cover;object-position:50% 28%;border-radius:3px;background:var(--paper-2)}
 form{display:grid;gap:17px}
 label{display:grid;gap:7px;font-size:.87rem;font-weight:600}
 input,select,textarea{
@@ -393,14 +403,25 @@ footer nav a:hover{text-decoration:underline}
 
 <header class="nav">
   <div class="wrap">
-    <a class="wordmark" href="#top">ORISON <small>SCREENS</small></a>
+    <a class="wordmark" href="#top"><svg class="mark" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <g transform="translate(0 5)">
+          <g transform="translate(32 28)">
+            <g transform="rotate(45)"><rect x="-5" y="-20" width="10" height="17"/><line x1="-5" y1="-16" x2="5" y2="-16"/><line x1="-5" y1="-12" x2="5" y2="-12"/><line x1="-5" y1="-8" x2="5" y2="-8"/><line x1="0" y1="-20" x2="0" y2="-3"/></g>
+            <g transform="rotate(135)"><rect x="-5" y="-20" width="10" height="17"/><line x1="-5" y1="-16" x2="5" y2="-16"/><line x1="-5" y1="-12" x2="5" y2="-12"/><line x1="-5" y1="-8" x2="5" y2="-8"/><line x1="0" y1="-20" x2="0" y2="-3"/></g>
+            <g transform="rotate(-45)"><rect x="-5" y="-20" width="10" height="17"/><line x1="-5" y1="-16" x2="5" y2="-16"/><line x1="-5" y1="-12" x2="5" y2="-12"/><line x1="-5" y1="-8" x2="5" y2="-8"/><line x1="0" y1="-20" x2="0" y2="-3"/></g>
+            <g transform="rotate(-135)"><rect x="-5" y="-20" width="10" height="17"/><line x1="-5" y1="-16" x2="5" y2="-16"/><line x1="-5" y1="-12" x2="5" y2="-12"/><line x1="-5" y1="-8" x2="5" y2="-8"/><line x1="0" y1="-20" x2="0" y2="-3"/></g>
+            <circle cx="0" cy="0" r="1.5" fill="currentColor" stroke="none"/>
+          </g>
+          <path d="M22 56 L24 38 Q24 34 32 34 Q40 34 40 38 L42 56 Z"/>
+          <path d="M30 56 L30 48 Q30 45 32 45 Q34 45 34 48 L34 56"/>
+        </g>
+      </svg><span class="lockup"><span class="name">ORISON</span><small>SCREENS</small></span></a>
     <ul>
       <li><a href="#journey">How it works</a></li>
       <li><a href="#advertisers">Advertisers</a></li>
       <li><a href="#screen">The screen</a></li>
       <li><a href="#in-the-cab">In the cab</a></li>
       <li><a href="#audience">Audience</a></li>
-      <li><a href="#drivers">Drivers</a></li>
     </ul>
     <a class="btn btn-amber" href="#contact">Talk to us</a>
   </div>
@@ -421,7 +442,7 @@ footer nav a:hover{text-decoration:underline}
         <p class="lede">A silent 13.3-inch screen at arm's length in the back of the cab, playing for the length of the journey and targeted by where the cab actually is.</p>
         <div class="hero-ctas">
           <a class="btn btn-amber" href="#contact">Request the media pack</a>
-          <a class="btn" href="#drivers">Host a screen in your cab</a>
+          <a class="btn" href="#journey">See a journey</a>
         </div>
       </div>
       <figure>
@@ -575,12 +596,20 @@ footer nav a:hover{text-decoration:underline}
     </div>
   </section>
 
+  <!-- ===================== INSTALL BAND ===================== -->
+  <div class="band">
+    <figure>
+      <img src="/assets/img/install-band.jpg" width="1800" height="901" loading="lazy"
+           alt="Two Orison fitters working at the open seat-back aperture inside a black cab, mid-installation.">
+      <div class="wrap"><figcaption>Fitting a unit into the seat back. Our own installers, no permanent modification to the vehicle.</figcaption></div>
+    </figure>
+  </div>
+
   <!-- ===================== IN THE CAB ===================== -->
   <section id="in-the-cab">
     <div class="wrap">
-      <div class="rule rule-draw" style="margin-bottom:clamp(40px,5vw,64px)"></div>
       <div class="sec-head rise">
-        <p class="eyebrow">For passengers, drivers and licensing</p>
+        <p class="eyebrow">For passengers and fleet partners</p>
         <h2>What it is like to ride with one.</h2>
         <p class="lede">A screen in a licensed taxi has to work for the person sitting in front of it, not only for the advertiser. Here is exactly what the unit does and does not do.</p>
       </div>
@@ -603,7 +632,7 @@ footer nav a:hover{text-decoration:underline}
         </div>
         <div class="def rise">
           <h3>The vehicle</h3>
-          <p>Fitted into the existing tip-up seat back with no permanent modification, clear of the driver's sightlines and the partition. <span class="todo">[Confirm the TfL notification or approval route, and the LEVC position on the fitting]</span></p>
+          <p>Fitted into the existing tip-up seat back with no permanent modification to the vehicle, clear of the driver's sightlines and the partition.</p>
         </div>
       </div>
     </div>
@@ -623,33 +652,6 @@ footer nav a:hover{text-decoration:underline}
         <div class="stat rise"><div class="n">67%</div><div class="l">of that revenue is now digital</div><div class="s">Outsmart, full-year 2025 revenue report</div></div>
         <div class="stat rise"><div class="n">~13,500</div><div class="l">licensed black cabs on London's roads</div><div class="s">TfL licensing data, 2026</div></div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===================== DRIVERS ===================== -->
-  <section class="drivers on-night" id="drivers">
-    <div class="wrap d-grid">
-      <div>
-        <div class="sec-head rise" style="margin-bottom:26px">
-          <p class="eyebrow">For drivers and fleet operators</p>
-          <h2>Earn from the back seat.</h2>
-          <p class="lede">You drive as normal. We fit the screen, keep it running, and pay you every month for carrying it.</p>
-        </div>
-        <ul class="checks">
-          <li><span><strong>You are paid every month</strong> for carrying the screen. Ask us for the current rate.</span></li>
-          <li><span><strong>No cost to you.</strong> Hardware, fitting, maintenance and data are ours.</span></li>
-          <li><span><strong>It makes no sound.</strong> No audio at all, so nothing to irritate your passengers or you.</span></li>
-          <li><span><strong>Nothing to do.</strong> It runs off the meter. No switching on, no plugging in, nothing to take home at the end of a shift.</span></li>
-        </ul>
-        <div class="hero-ctas" style="margin-top:30px">
-          <a class="btn btn-amber" href="#contact">Register interest</a>
-        </div>
-      </div>
-      <figure>
-        <img src="/assets/img/installation.jpg" width="1000" height="1200" loading="lazy"
-             alt="An Orison installer seating the screen unit into the back of a black cab tip-up seat.">
-        <figcaption>Installation, London. Our fitters, our hardware.</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -682,11 +684,11 @@ footer nav a:hover{text-decoration:underline}
           <div class="sec-head">
             <p class="eyebrow">Contact</p>
             <h2>Talk to us.</h2>
-            <p class="lede">Media pack, pilot campaigns, driver sign-up or investment. One form, answered by a person.</p>
+            <p class="lede">Media pack, pilot campaigns, fleet partnerships or investment. One form, answered by a person.</p>
           </div>
           <div class="direct">
             <div><div class="k">Email</div><a href="mailto:jack@orisonscreens.com">jack@orisonscreens.com</a></div>
-            <div><div class="k">LinkedIn</div><span class="todo">[company page URL]</span></div>
+            <div><div class="k">LinkedIn</div><a href="https://www.linkedin.com/company/orison-screens/" rel="noopener">linkedin.com/company/orison-screens</a></div>
             <div><div class="k">Based</div>London</div>
           </div>
         </div>
@@ -698,7 +700,7 @@ footer nav a:hover{text-decoration:underline}
               <option value="">Choose one</option>
               <option>An advertiser or brand</option>
               <option>A media agency</option>
-              <option>A cab driver or fleet operator</option>
+              <option>A fleet operator</option>
               <option>An investor</option>
               <option>Something else</option>
             </select>
@@ -715,14 +717,25 @@ footer nav a:hover{text-decoration:underline}
 <footer>
   <div class="wrap">
     <div>
-      <div class="wordmark" style="margin-bottom:9px">ORISON <small>SCREENS</small></div>
+      <div class="wordmark" style="margin-bottom:11px"><svg class="mark" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <g transform="translate(0 5)">
+          <g transform="translate(32 28)">
+            <g transform="rotate(45)"><rect x="-5" y="-20" width="10" height="17"/><line x1="-5" y1="-16" x2="5" y2="-16"/><line x1="-5" y1="-12" x2="5" y2="-12"/><line x1="-5" y1="-8" x2="5" y2="-8"/><line x1="0" y1="-20" x2="0" y2="-3"/></g>
+            <g transform="rotate(135)"><rect x="-5" y="-20" width="10" height="17"/><line x1="-5" y1="-16" x2="5" y2="-16"/><line x1="-5" y1="-12" x2="5" y2="-12"/><line x1="-5" y1="-8" x2="5" y2="-8"/><line x1="0" y1="-20" x2="0" y2="-3"/></g>
+            <g transform="rotate(-45)"><rect x="-5" y="-20" width="10" height="17"/><line x1="-5" y1="-16" x2="5" y2="-16"/><line x1="-5" y1="-12" x2="5" y2="-12"/><line x1="-5" y1="-8" x2="5" y2="-8"/><line x1="0" y1="-20" x2="0" y2="-3"/></g>
+            <g transform="rotate(-135)"><rect x="-5" y="-20" width="10" height="17"/><line x1="-5" y1="-16" x2="5" y2="-16"/><line x1="-5" y1="-12" x2="5" y2="-12"/><line x1="-5" y1="-8" x2="5" y2="-8"/><line x1="0" y1="-20" x2="0" y2="-3"/></g>
+            <circle cx="0" cy="0" r="1.5" fill="currentColor" stroke="none"/>
+          </g>
+          <path d="M22 56 L24 38 Q24 34 32 34 Q40 34 40 38 L42 56 Z"/>
+          <path d="M30 56 L30 48 Q30 45 32 45 Q34 45 34 48 L34 56"/>
+        </g>
+      </svg><span class="lockup"><span class="name">ORISON</span><small>SCREENS</small></span></div>
       © 2026 Orison Screens Ltd
     </div>
     <nav>
       <a href="#journey">How it works</a>
       <a href="#advertisers">Advertisers</a>
       <a href="#in-the-cab">In the cab</a>
-      <a href="#drivers">Drivers</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
