@@ -48,9 +48,6 @@ used at all: the placeholder URL is legible at the size the site would display i
 
 ## To confirm
 
-- **Screen diagonal.** The site no longer claims 13.3 inches. Measured off these
-  photos the panel is nearer 12, so the real figure needs measuring across the
-  active area, not the housing, before it goes back on the page.
 - **The vehicle in the founder portrait** does not look like a modern LEVC TX.
   It is fine as a portrait, but the image must not be captioned as a black cab
   unless it is one.
