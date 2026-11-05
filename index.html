@@ -242,9 +242,9 @@ section{padding-block:calc(var(--rhythm) / 2)}
   padding:clamp(16px,2.4vw,28px);display:grid;gap:20px;
   margin-top:clamp(28px,4vw,44px);
 }
-.j-scroll{overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+.j-scroll{min-width:0;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
 .j-diagram{width:100%;min-width:660px;height:auto;display:block;overflow:visible}
-.j-row{display:grid;gap:20px;margin-top:20px}
+.j-row{display:grid;gap:20px;margin-top:20px;min-width:0}
 @media (min-width:900px){ .j-row{grid-template-columns:1fr 1fr;gap:24px;align-items:start} }
 .j-line{fill:none;stroke:#33373E;stroke-width:11;stroke-linecap:round;stroke-linejoin:round}
 .j-line-lit{fill:none;stroke:var(--amber);stroke-width:11;stroke-linecap:round;stroke-linejoin:round}
@@ -326,6 +326,30 @@ section{padding-block:calc(var(--rhythm) / 2)}
 /* ============================================================
    THE SCREEN — pinned product
    ============================================================ */
+/* ---------- partners ---------- */
+.partners-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:44px;margin-top:clamp(28px,4vw,48px)}
+@media (min-width:900px){ .partners-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px} }
+.partner{display:grid;gap:20px;align-content:start}
+.partner figure{margin:0}
+.partner img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:3px;background:var(--paper-2);display:block}
+.partner-quote{
+  aspect-ratio:3/2;border-radius:3px;background:var(--night);color:var(--night-text);
+  display:grid;align-content:center;gap:16px;padding:clamp(24px,3.4vw,44px);
+}
+.partner-quote q{
+  quotes:none;font-family:var(--display);font-size:clamp(1.35rem,2.3vw,2rem);
+  line-height:1.12;letter-spacing:-.01em;text-wrap:balance;
+}
+.partner-quote .attrib{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);
+}
+.partner-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5em .9em;padding-bottom:13px;border-bottom:1px solid var(--ink)}
+.partner-head h3{font-size:1.3rem}
+.partner-head .tag{font-family:var(--mono);font-size:.69rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);background:var(--amber-soft);padding:.25em .55em;border-radius:2px}
+.partner-body{display:grid;gap:14px}
+.partner-body p{color:var(--ink-2);max-width:46ch}
+.partner-body .profile{font-size:.94rem;color:var(--ink-3)}
+
 .band{margin-block:0}
 .band figure{margin:0}
 .band img{width:100%;aspect-ratio:2/1;object-fit:cover;display:block;background:var(--paper-2)}
@@ -415,6 +439,7 @@ footer nav a:hover{text-decoration:underline}
     <ul>
       <li><a href="#journey">How it works</a></li>
       <li><a href="#advertisers">Advertisers</a></li>
+      <li><a href="#partners">Partners</a></li>
       <li><a href="#screen">The screen</a></li>
       <li><a href="#in-the-cab">In the cab</a></li>
       <li><a href="#audience">Audience</a></li>
@@ -551,6 +576,49 @@ footer nav a:hover{text-decoration:underline}
           <h3>Proof</h3>
           <p>A play log for every impression with time and GPS position. The screen runs between meter on and meter off, so nothing is ever counted with an empty cab.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PARTNERS ===================== -->
+  <section id="partners">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <p class="eyebrow">Partners</p>
+        <h2>The first brands on the screens.</h2>
+        <p class="lede">Two launch partners, both using the screen for what it is good at: a message that fits the street the cab is on.</p>
+      </div>
+
+      <div class="partners-grid">
+        <article class="partner rise">
+          <figure>
+            <img src="/assets/img/partner-dazn.jpg" width="1240" height="827" loading="lazy"
+                 alt="The Ballon d'Or trophy in its case on the seat of a black cab, beside an Orison screen playing DAZN's campaign for the award ceremony.">
+          </figure>
+          <div class="partner-head">
+            <h3>DAZN</h3>
+            <span class="tag">Ballon d'Or</span>
+          </div>
+          <div class="partner-body">
+            <p>Orison carried DAZN's Ballon d'Or campaign through central London in the run-up to the ceremony, putting free live coverage of football's biggest individual honour in front of passengers crossing the West End and the City.</p>
+            <p class="profile">The trophy came along for the ride.</p>
+          </div>
+        </article>
+
+        <article class="partner rise">
+          <div class="partner-quote">
+            <q>A rainy London morning. A Costa Rican cloud forest.</q>
+            <span class="attrib">Explore Worldwide × Orison</span>
+          </div>
+          <div class="partner-head">
+            <h3>Explore Worldwide</h3>
+            <span class="tag">Launch partner</span>
+          </div>
+          <div class="partner-body">
+            <p>A month-long campaign whose creative answers the street outside, swapping rain-soaked London for Costa Rica's misty cloud forests, a pisco sour at sunset in Peru, or a bustling Asian night market as evening falls. Location, time of day and weather all move the creative.</p>
+            <p class="profile">Explore Worldwide creates small group adventures that bring travellers closer to the people, places and stories that give a destination its character. A meal in someone's home. An unexpected wildlife encounter. A local festival discovered along the way. All with expert tour leaders who bring each destination to life.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -730,6 +798,7 @@ footer nav a:hover{text-decoration:underline}
     <nav>
       <a href="#journey">How it works</a>
       <a href="#advertisers">Advertisers</a>
+      <a href="#partners">Partners</a>
       <a href="#in-the-cab">In the cab</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
